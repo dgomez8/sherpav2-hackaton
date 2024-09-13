@@ -1,0 +1,105 @@
+{
+  "name": "bbog-dig-angular-template-web-ui",
+  "version": "1.0.2",
+  "description": "Template example for generating frontend repos for bdb. Courtesy of @mnieto2 and @aacos13",
+  "keywords": [
+    "github",
+    "actions",
+    "angular",
+    "husky",
+    "bbog",
+    "template"
+  ],
+  "bugs": {
+    "email": "mnieto2@bancodebogota.com.co",
+    "url": "https://github.com/bancodebogota/bbog-dig-angular-template-web-ui/issues"
+  },
+  "author": {
+    "email": "mnieto2@bancodebogota.com.co",
+    "name": "Mateo Nieto",
+    "url": "https://github.com/mnieto2"
+  },
+  "author2": {
+    "email": "aacos13@bancodebogota.com.co",
+    "name": "Andres Mauricio Acosta Pulido",
+    "url": "https://github.com/aacos13"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bancodebogota/bbog-dig-angular-template-web-ui.git"
+  },
+  "license": "MIT",
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve",
+    "dev": "ng serve --port $PORT",
+    "build": "ng build",
+    "build:qa": "ng build --configuration=qa --aot",
+    "build:st": "ng build --configuration=stage --aot",
+    "build:prod": "ng build --configuration=production --prod",
+    "test": "npm run lint && jest",
+    "coverage": "jest --coverage",
+    "lint": "ng lint",
+    "lint:fix": "ng lint --fix=true",
+    "sonar": "gulp sonar"
+  },
+  "husky": {
+    "//1": "Use git commit --no-verify to bypass the pre-commit hook",
+    "//2": "Use git push --no-verify to bypass the pre-push hook",
+    "hooks": {
+      "pre-commit": "npm run lint",
+      "pre-push": "npm run test"
+    }
+  },
+  "private": true,
+  "dependencies": {
+    "@angular/animations": "~13.3.12",
+    "@angular/common": "~13.3.12",
+    "@angular/compiler": "~13.3.12",
+    "@angular/core": "~13.3.12",
+    "@angular/elements": "^13.1.1",
+    "@angular/forms": "~13.3.12",
+    "@angular/platform-browser": "~13.3.12",
+    "@angular/platform-browser-dynamic": "~13.3.12",
+    "@angular/router": "~13.3.12",
+    "document-register-element": "^1.14.10",
+    "rxjs": "~7.4.0",
+    "tslib": "^2.3.0",
+    "zone.js": "~0.11.4"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "~13.3.10",
+    "@angular-eslint/builder": "13.0.1",
+    "@angular-eslint/eslint-plugin": "13.0.1",
+    "@angular-eslint/eslint-plugin-template": "13.0.1",
+    "@angular-eslint/schematics": "13.0.1",
+    "@angular-eslint/template-parser": "13.0.1",
+    "@angular/cli": "~13.3.10",
+    "@angular/compiler-cli": "~13.3.12",
+    "@types/jest": "^27.4.0",
+    "@types/node": "^12.11.1",
+    "@typescript-eslint/eslint-plugin": "5.3.0",
+    "@typescript-eslint/parser": "5.3.0",
+    "eslint": "^8.2.0",
+    "husky": "^7.0.4",
+    "jest": "^27.4.7",
+    "jest-preset-angular": "^11.0.1",
+    "typescript": "~4.4.2"
+  },
+  "jest": {
+    "preset": "jest-preset-angular",
+    "setupFilesAfterEnv": [
+      "<rootDir>/jestSetup.ts"
+    ],
+    "testPathIgnorePatterns": [
+      "<rootDir>/node_modules/",
+      "<rootDir>/dist/"
+    ],
+    "globals": {
+      "ts-jest": {
+        "tsconfig": "<rootDir>/tsconfig.spec.json",
+        "stringifyContentPathRegex": "\\.html$"
+      }
+    }
+  }
+}
